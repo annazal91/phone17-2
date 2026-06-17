@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>iPhone Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#0b0f12;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+width:90%;
+max-width:500px;
+text-align:center;
+}
+
+h1{margin-bottom:20px}
+
+.card{
+background:#1a1a1a;
+padding:15px;
+margin:10px 0;
+border-radius:12px;
+cursor:pointer;
+transition:.2s;
+}
+
+.card:hover{
+background:#333;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:none;
+border-radius:12px;
+background:#28c840;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.success{
+display:none;
+font-size:50px;
+margin-top:20px;
+color:#28c840;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Choose iPhone</h1>
+
+<div class="card" onclick="select(this)">iPhone 16</div>
+<div class="card" onclick="select(this)">iPhone 17</div>
+
+<div class="card" onclick="select(this)">128 GB</div>
+<div class="card" onclick="select(this)">256 GB</div>
+<div class="card" onclick="select(this)">512 GB</div>
+
+<button onclick="order()">Order</button>
+
+<div class="success" id="ok">✔ Order Placed</div>
+
+</div>
+
+<script>
+
+function select(el){
+document.querySelectorAll(".card").forEach(c=>c.style.background="#1a1a1a");
+el.style.background="#EBAE29";
+el.style.color="#000";
+}
+
+function order(){
+document.getElementById("ok").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
